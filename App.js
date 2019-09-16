@@ -7,12 +7,8 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <Text style={styles.defaultText}>React</Text>
-        <Text style={[styles.defaultText, styles.selectedText]}>NodeJs</Text>
+        <Text style={[styles.defaultText, styles.selectedText]}>Node</Text>
         <Text style={styles.defaultText}>React-native</Text>
-        <Text style={[styles.defaultText, styles.selectedText]}>Database</Text>
-        <Text style={styles.defaultText}>Git</Text>
-        <Text style={[styles.defaultText, styles.selectedText]}>Python</Text>
-        <Text style={styles.defaultText}>AWS</Text>
       </View>
     );
   }
@@ -20,9 +16,12 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#0984e3",
-    flex: 1
+    flexDirection: "row",
+    justifyContent: "center"
   },
   defaultText: {
+    flex: 1,
+    textAlign: "center",
     fontSize: 22,
     padding: 10,
     margin: 5,
@@ -32,6 +31,7 @@ const styles = StyleSheet.create({
   selectedText: {
     backgroundColor: "#ffeaa7",
     color: "#d63031",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    flex: 2
   }
 });
