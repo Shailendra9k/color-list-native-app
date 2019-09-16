@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text, StatusBar, StyleSheet } from "react-native";
+import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
 
 export default class ColorList extends React.Component {
   constructor() {
     super();
     this.state = {
-      backgroundColor: "#eb4d4b"
+      backgroundColor: "#7bed9f"
     };
     this.changeColor = this.changeColor.bind(this);
   }
@@ -17,11 +17,16 @@ export default class ColorList extends React.Component {
     const { backgroundColor } = this.state;
     return (
       <View style={[styles.container, { backgroundColor }]}>
-        <View style={styles.row}>
-          <View style={styles.sample}>
-            <Text>Yellow</Text>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.changeColor("#eccc68")}
+          underlayColor="#ff4757"
+        >
+          <View style={styles.row}>
+            <View style={[styles.sample, { backgroundColor: "#eccc68" }]} />
+            <Text style={styles.text}>Yellow</Text>
           </View>
-        </View>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -33,13 +38,32 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center"
   },
+
   button: {
-    fontSize: 30,
     margin: 10,
     padding: 10,
     borderWidth: 2,
     borderRadius: 10,
     alignSelf: "stretch",
-    textAlign: "center"
+    backgroundColor: "#747d8c"
+  },
+
+  row: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+
+  sample: {
+    height: 20,
+    width: 20,
+    borderRadius: 10,
+    margin: 5,
+    backgroundColor: "#dfe4ea"
+  },
+
+  text: {
+    fontSize: 30,
+    margin: 5,
+    flexDirection: "row"
   }
 });
