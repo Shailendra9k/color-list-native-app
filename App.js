@@ -8,7 +8,7 @@ export default class App extends React.Component {
         <StatusBar hidden={true} />
         <Text style={styles.defaultText}>React</Text>
         <Text style={[styles.defaultText, styles.selectedText]}>Node</Text>
-        <Text style={styles.defaultText}>React-native</Text>
+        <Text style={styles.defaultText}>JS</Text>
       </View>
     );
   }
@@ -17,7 +17,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#0984e3",
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
+    flex: 1,
+    alignItems: "center"
   },
   defaultText: {
     flex: 1,
@@ -32,6 +34,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffeaa7",
     color: "#d63031",
     fontWeight: "bold",
-    flex: 2
+    alignSelf: "flex-end"
   }
 });
