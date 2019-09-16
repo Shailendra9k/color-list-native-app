@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
+import ColorButton from "./components/colorButton";
 
 export default class ColorList extends React.Component {
   constructor() {
@@ -16,54 +17,32 @@ export default class ColorList extends React.Component {
   render() {
     const { backgroundColor } = this.state;
     return (
-      <View style={[styles.container, { backgroundColor }]}>
-        <TouchableHighlight
-          style={styles.button}
-          onPress={() => this.changeColor("#eccc68")}
-          underlayColor="#ff4757"
-        >
-          <View style={styles.row}>
-            <View style={[styles.sample, { backgroundColor: "#eccc68" }]} />
-            <Text style={styles.text}>Yellow</Text>
-          </View>
-        </TouchableHighlight>
-      </View>
+      <ScrollView style={[styles.container, { backgroundColor }]}>
+        <ColorButton backgroundColor="red" onSelect={this.changeColor} />
+        <ColorButton backgroundColor="blue" onSelect={this.changeColor} />
+        <ColorButton backgroundColor="green" onSelect={this.changeColor} />
+        <ColorButton backgroundColor="salmon" onSelect={this.changeColor} />
+        <ColorButton
+          backgroundColor="rgb(255,0,255)"
+          onSelect={this.changeColor}
+        />
+        <ColorButton backgroundColor="#00FF00" onSelect={this.changeColor} />
+        <ColorButton backgroundColor="red" onSelect={this.changeColor} />
+        <ColorButton backgroundColor="blue" onSelect={this.changeColor} />
+        <ColorButton backgroundColor="green" onSelect={this.changeColor} />
+        <ColorButton backgroundColor="salmon" onSelect={this.changeColor} />
+        <ColorButton
+          backgroundColor="rgb(255,0,255)"
+          onSelect={this.changeColor}
+        />
+        <ColorButton backgroundColor="#00FF00" onSelect={this.changeColor} />
+      </ScrollView>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#0984e3",
-    justifyContent: "center",
     flex: 1,
-    alignItems: "center"
-  },
-
-  button: {
-    margin: 10,
-    padding: 10,
-    borderWidth: 2,
-    borderRadius: 10,
-    alignSelf: "stretch",
-    backgroundColor: "#747d8c"
-  },
-
-  row: {
-    flexDirection: "row",
-    alignItems: "center"
-  },
-
-  sample: {
-    height: 20,
-    width: 20,
-    borderRadius: 10,
-    margin: 5,
-    backgroundColor: "#dfe4ea"
-  },
-
-  text: {
-    fontSize: 30,
-    margin: 5,
-    flexDirection: "row"
+    paddingTop: 20
   }
 });
