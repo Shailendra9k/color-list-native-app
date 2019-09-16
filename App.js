@@ -1,29 +1,32 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableHighlight,
-  Dimensions,
-  Button,
-  TouchableOpacity,
-  Image,
-  TextInput
-} from "react-native";
-import LoginScreen from "./screen/login";
+import { View, Text, StatusBar, StyleSheet } from "react-native";
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <LoginScreen />
+        <StatusBar hidden={true} />
+        <Text style={styles.defaultText}>React</Text>
+        <Text style={styles.defaultText}>NodeJs</Text>
+        <Text style={styles.defaultText}>React-native</Text>
+        <Text style={styles.defaultText}>Database</Text>
+        <Text style={styles.defaultText}>Git</Text>
+        <Text style={styles.defaultText}>Python</Text>
+        <Text style={styles.defaultText}>AWS</Text>
       </View>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#0984e3",
     flex: 1
+  },
+  defaultText: {
+    fontSize: 22,
+    padding: 10,
+    margin: 5,
+    color: "#2d3436",
+    borderWidth: StyleSheet.hairlineWidth
   }
 });
